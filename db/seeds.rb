@@ -13,7 +13,7 @@ if Rails.env.development? # Only run in development environment!
 
   if Event.count.zero?
     (-5..15).each_with_index do |days, index|
-      Event.create(performer: "Performer #{index + 1}", when: DateTime.now + days, content: "This is the event content for Performer #{index + 1}")
+      Event.create(performer: "Performer #{index + 1}", event_time: DateTime.now + days, content: "This is the event content for Performer #{index + 1}")
     end
   end
 end
