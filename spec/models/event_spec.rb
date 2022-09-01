@@ -42,9 +42,9 @@ RSpec.describe Event, type: :model do
       end
     end
 
-    context 'given that the when attribute is missing' do
+    context 'given that the event_time attribute is missing' do
       before do
-        @event.when = nil
+        @event.event_time = nil
       end
 
       it 'is invalid' do
@@ -54,7 +54,7 @@ RSpec.describe Event, type: :model do
       it 'has expected error message' do
         expected = [ "can't be blank" ]
         @event.valid?
-        expect(@event.errors[:when].to_a).to eq expected
+        expect(@event.errors[:event_time].to_a).to eq expected
       end
     end
   end
