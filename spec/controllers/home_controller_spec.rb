@@ -3,7 +3,7 @@ RSpec.describe HomeController, type: :controller do
     describe "GET index" do
       it "assigns present and future events to @events" do
         future_event = Event.create(performer: "future day", event_time: (DateTime.now + 1.day), content: "1day in the future")
-        today_event = Event.create(performer: "present day", event_time: (DateTime.now + 1.hour), content: "today")
+        today_event = Event.create(performer: "present day", event_time: (DateTime.now + 1.minute), content: "today")
         get :index
         expect(assigns(:events)).to eq([future_event,today_event])
       end
