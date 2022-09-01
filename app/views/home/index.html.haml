@@ -1,0 +1,13 @@
+.container
+  %h2 Calendar of Upcoming Events
+  %table.table.table-striped.table-bordered.table-collapse
+    %thead
+      %th Performer
+      %th When
+      %th Details
+    %tbody
+      - @events.each do |event|
+        %tr
+          %td= event.performer
+          %td= event.event_time
+          %td= event.content
